@@ -46,8 +46,42 @@ function sumOdd(arr){
     }
     return t;
 }
-
 console.log(sumOdd([1, 2, 3, 4, 5])) // 应该返回 9
 console.log(sumOdd([2, 4, 6, 8, 10])) // 应该返回 0
 console.log(sumOdd([1, 3, 5, 7, 9])) // 应该返回 25
+
+//////////  Object
+
+const intro={
+    name: "adw",
+    age: 1,
+}
+intro.sex="male";
+for(let key in intro){
+    console.log("data"+key+": "+intro[key]);
+}
+function isDev(obj){
+    if(obj.isDeveloper)return true;
+    else return false;
+}
+const obj1 = {
+  name: "0xAA",
+  isDeveloper: true,
+}
+const obj2 = {
+  name: "Trump",
+}
+console.log(isDev(obj1)); // 应该输出 true
+console.log(isDev(obj2)); // 应该输出 false
+
+/////  Async,await
+
+async function getBaycMetadata(){
+    const url = `http://api.open-notify.org/iss-now.json`;
+    const response = await fetch(url);
+    const BaycMetadata = await response.json();
+    console.log(BaycMetadata);
+  }
+  getBaycMetadata()
+
 
